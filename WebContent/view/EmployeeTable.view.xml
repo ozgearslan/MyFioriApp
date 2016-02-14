@@ -1,0 +1,92 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.EmployeeTable"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!-- sayfayı NavContainer ile böleriz -->
+	
+	<NavContainer id="navCon" width="100%" height="25em"
+		class="navContainerControl sapUiSmallMarginBottom">
+		
+		<Page title="Employee Table Page" showNavButton="true"
+			navButtonPress="handleNavButtonPress">
+			<!-- SABİTLEMEYİ SUBHEADER YAPAR -->
+			<subHeader>
+				<Toolbar>
+					<Text text="Employee Table" />
+				</Toolbar>
+			</subHeader>
+			<Table id="idEmployeesTable" inset="false" itemPress="handleitemPress"
+				items="{
+			path: '/Employees',
+			sorter: {
+				path: 'FirstName'
+			}
+		}">
+				<!-- <headerToolbar> -->
+				<!-- <Toolbar> -->
+				<!-- <Title text="Employees" level="H2"/> -->
+				<!-- </Toolbar> -->
+				<!-- </headerToolbar> -->
+
+
+				<columns>
+					<Column width="12em">
+						<Text text="Name" />
+					</Column>
+
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+						<Text text="Title" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Country" />
+					</Column>
+
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier title="{FirstName} {LastName}"
+								text="Employee ID: {EmployeeID}" />
+							<Text text="{Title}" />
+
+							<ObjectNumber number="{Country}" />
+
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+	
+		</Page>
+		
+	</NavContainer>
+	<NavContainer id="navCon2" width="100%" height="25em"
+		class="navContainerControl sapUiSmallMarginBottom">
+		
+	<Page title="Employees" >
+		<List
+			id="listid"
+			select="handleListSelect"
+			items="{/Employees}" >
+			<!-- TYPE UNUTMA -->	
+			<ObjectListItem
+				type="Active"  
+				press="handleListItemPress"
+				title="{FirstName} {LastName}"
+				number="{EmployeeID}"
+				
+			>
+				<attributes>
+					<ObjectAttribute text="Birth Day: {
+					path:'BirthDate',
+					formatter: 'sap.ui.demo.myFiori.util.Formatter.date'
+					}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus
+						text="{City} {Country}" />
+						
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+			<footer><Toolbar><Button text="Action 1" /></Toolbar></footer>
+		</Page>
+		</NavContainer>
+</core:View>

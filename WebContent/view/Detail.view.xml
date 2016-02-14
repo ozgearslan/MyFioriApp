@@ -1,0 +1,51 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.Detail"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	displayBlock="true" xmlns:core="sap.ui.core">
+	<Page title="Detail Page" showNavButton="true" navButtonPress="handleNavButtonPress">
+
+		<!--EDİTABLE TRUE OLMALI Kİ TEXTALİGN (horizantal ayarlama yapar) ÇALIŞSIN -->
+		<f:SimpleForm id="formid" minWidth="1024"
+			maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+			labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+			columnsM="1">
+			<f:content>
+				<Label text="Employee id" />
+				<Text text="{EmployeeID}" />
+				<Label text="Name" />
+				<Text text="{FirstName} {LastName}" />
+				<Label text="" />
+				<CheckBox text="Option " id="checkid" select="onSelect"
+					textAlign="Left" selected="false" />
+
+				<Text text=" Text" id="textid" textAlign="Left" visible="false" />
+				<Label text="" />
+				<CheckBox text="Option2 " id="checkid2" select="onSelect2"
+					textAlign="Left" />
+
+				<Input textAlign="Left" enabled="false" id="textid2"  />
+				<Label text="" />
+				<Input textAlign="Left"  id="textid3" liveChange="onliveChange" />
+
+			</f:content>
+		</f:SimpleForm>
+
+		<FlexBox height="100px" alignItems="Center" justifyContent="Center">
+			<items>
+				<Button text="Show Employee Table" press="onShowEmployeeTablePress" />
+				<Button text="Show Form" press="onShowFormPress" />
+<Button text="Show Date" press="onShowDate" />
+
+			</items>
+		</FlexBox>
+
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="printid" text="Print" type="Emphasized" class="sapUiSmallMarginBottom" press="handlePrintPress" />
+					
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+
+</core:View>

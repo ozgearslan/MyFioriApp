@@ -1,0 +1,44 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.Master"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="Master Page" >
+		
+<subHeader>
+			<Toolbar>
+				<SearchField
+					liveChange="onSearch"
+					width="100%" />
+			</Toolbar>
+		</subHeader>
+	
+		<List
+			id="listid"
+			select="handleListSelect"
+			items="{/Employees}" >
+			<!-- TYPE UNUTMA -->	
+			<ObjectListItem
+				type="Active"  
+				press="handleListItemPress"
+				title="{FirstName} {LastName}"
+				number="{EmployeeID}"
+				
+			>
+				<attributes>
+					<ObjectAttribute text="Birth Day: {
+					path:'BirthDate',
+					formatter: 'sap.ui.demo.myFiori.util.Formatter.date'
+					}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus
+						text="{City} {Country}" />
+						
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+		
+	</Page>
+	
+</core:View>

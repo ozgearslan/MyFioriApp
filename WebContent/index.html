@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+				<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<title> My Split & Full App</title>
+
+		<script
+			id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-libs="sap.m, sap.ui.layout ,sap.ui.table"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{
+				"sap.ui.demo.myFiori": "./"
+			}' >
+		</script>
+
+		<script>
+			new sap.m.Shell({
+				app : new sap.ui.core.ComponentContainer({
+					name : "sap.ui.demo.myFiori"
+				})
+			}).placeAt("content");
+		</script>
+
+	</head>
+	<body class="sapUiBody" id="content">
+	</body>
+</html>

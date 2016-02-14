@@ -1,0 +1,30 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.Date"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	displayBlock="true" xmlns:core="sap.ui.core">
+	<Page title="Date Page" showNavButton="true" navButtonPress="handleNavButtonPress">
+	<!-- TİTLE'A İCON KONULUR -->
+	<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Title level="H2" text="Custom Title"/>
+				</contentMiddle>
+				<contentRight>
+					<ToggleButton icon="sap-icon://horizontal-bar-chart" press="onPress" />
+					 <Switch id="SW_id" class="switchPosition" state="true" customTextOn="ON" customTextOff="OFF"
+					 change="onSwitch"></Switch>
+				</contentRight>
+			</Bar>
+		</customHeader>
+	
+	<DatePicker
+			id="DP1"
+			placeholder="Enter Date ..."
+			change="handleChange"
+			width= "20em"
+			valueFormat="yyyy-MM-dd" displayFormat="long"
+			class="sapUiSmallMarginBottom"/>
+		<VBox class="sapUiSmallMargin">	
+		<Text id="labelid" text=""  />
+		</VBox>
+	</Page>
+	</core:View>
